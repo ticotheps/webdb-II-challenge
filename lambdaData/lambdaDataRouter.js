@@ -17,3 +17,5 @@ const db = knex(knexConfig); // Step 3: Set the 'knex(knexConfig)' to a variable
 router.get("/", (req, res) => {
     // Step 4: Use the proper syntax from knexjs.org to select and return all records from the table
 });
+
+module.exports = router;
