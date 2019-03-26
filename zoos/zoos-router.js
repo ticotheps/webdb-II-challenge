@@ -7,7 +7,7 @@ const knexConfig = {
     client: "sqlite3", // this is the driver
     useNullAsDefault: true,
     connection: {
-      filename: "./data/lambda.sqlite3"
+      filename: "/data/lambda.sqlite3"
     },
     // debug: true
 };
@@ -15,7 +15,13 @@ const knexConfig = {
 const db = knex(knexConfig); // Step 3: Set the 'knex(knexConfig)' to a variable called 'db'
 
 router.get("/", (req, res) => {
-    // Step 4: Use the proper syntax from knexjs.org to select and return all records from the table
+    db("zoos")
+        .then(zoos => {
+            res.status(200).json(zoos);
+        })
+        .catch(error => {
+            res.status(500).json(error);
+        });
 });
 
 module.exports = router;
