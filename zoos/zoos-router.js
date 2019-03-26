@@ -7,7 +7,7 @@ const knexConfig = {
     client: "sqlite3", // this is the driver
     useNullAsDefault: true,
     connection: {
-      filename: "/data/lambda.sqlite3"
+      filename: "./data/zoos.db3",
     },
     // debug: true
 };
