@@ -59,7 +59,7 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-    db("bear")
+    db("bears")
         .where({ id: req.params.id })
         .update(req.body)
         .then(count => {
