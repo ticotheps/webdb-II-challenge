@@ -1,6 +1,8 @@
 const express = require('express');
 const helmet = require('helmet');
 
+const knex = require('knex'); // Step 1: Bring in the knexjs library
+
 const server = express();
 
 server.use(express.json());
